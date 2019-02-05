@@ -8,15 +8,62 @@
 ::selection
 	background-color: $accent
 	color: #fff
+ul
+	list-style: none
+
+p
+	margin-bottom: 30px
+
+
+%item-base
+	color: $blue-dark
+	text-transform: uppercase
+
+%item-header-roboto
+	font-family: $font-family-main
+	font-weight: 900
+	margin-bottom: 25px
+
+%item-header-playfair
+	font-family: $font-family-secondary
+	font-weight: 700
+	margin-bottom: 15px
+
+
+h2
+	@extend %item-base
+	@extend %item-header-playfair
+	font-size: $font-size-h2
+	
+
+h3
+	@extend %item-base
+	@extend %item-header-playfair
+	font-size: $font-size-h3
+	
+
+h4
+	@extend %item-base 
+	@extend %item-header-roboto
+	font-size: $font-size-h4
+	
+h5
+	@extend %item-base
+	@extend %item-header-roboto 
+	font-size: $font-size-h5
+	
+	
+
 
 body
-	font-size: 16px
+	font-size: $font-size-text
 	min-width: 320px
 	position: relative
-	line-height: 1.65
-	font-family: $default-font
+	line-height: $line-height-text
+	font-family: $font-family-main
+	font-weight: 100
 	overflow-x: hidden
-	color: $text
+	color: $color-main
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -37,6 +84,119 @@ body
 
 b, strong
 	font-weight: bold
+
+
+
+
+//////////////
+header
+	background-color: $blue
+	//background-color: transparent
+	padding: 35px 0px 20px 0px
+	position: fixed
+	z-index: 999
+	width: 100%
+
+.slider
+	background: $blue url(../img/slide-1.jpg) no-repeat top center
+	width: 100%
+	height: 670px
+	position: relative
+
+
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+		opacity: 0.6
+		@include gradient($start-color, $end-color, horizontal)
+
+	h2
+		text-transform: capitalize
+		z-index: 9999
+		position: relative
+	p
+		text-transform: capitalize
+		z-index: 9999
+		position: relative
+	
+	.button
+		z-index: 9999
+		position: relative
+
+
+
+
+.logo
+	color: #00e0d0
+	font-size: 30px
+	margin-right: 15px
+
+	&:before
+		content: url(../img/logo.png)
+		margin-right: 10px
+
+.header-menu a
+	color: white
+	font-family: $font-family-main
+	font-weight: 900
+	text-transform: uppercase
+	font-size: $font-soze-header-menu
+	padding: 0px 12px
+
+	&.active
+		color: $sky-blue
+
+		&:hover
+			text-decoration: none
+
+.block
+	padding: 70px 0px
+
+	&_white
+		background-color: $white
+		color: $color-main
+		
+		h1, h2, h3, h4, h5, a 
+			color: $blue-dark
+
+	&_blue
+		//background-color: $blue
+		color: $white
+
+		h1, h2, h3, h4, h5, a 
+			color: $white
+		
+
+
+
+.button
+	color: $sky-blue
+	text-transform: uppercase
+	font-family: $font-family-button
+	font-size: 16px
+	padding: 15px
+	border: 2px solid $sky-blue
+	display: inline-block
+
+	&:hover
+		text-decoration: none
+		color: $color-main
+		border: 2px solid $color-main
+
+
+.expertise-icon
+	display: inline-block
+	margin-bottom: 35px	
+
+.subtitle
+	font-family: $font-family-secondary
+	color: $color-main
+
+
 
 
 
